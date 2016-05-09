@@ -10,7 +10,7 @@ if ( isNil "FOB_typename" ) then { FOB_typename = "Land_Cargo_HQ_V1_F"; };
 if ( isNil "FOB_box_typename" ) then { FOB_box_typename = "B_Slingload_01_Cargo_F"; };
 if ( isNil "FOB_truck_typename" ) then { FOB_truck_typename = "rhsusf_M1083A1P2_B_M2_d_MHQ_fmtv_usarmy"; };
 if ( isNil "Arsenal_typename" ) then { Arsenal_typename = "B_supplyCrate_F"; };
-if ( isNil "Respawn_truck_typename" ) then { Respawn_truck_typename = "rhsusf_m113d_usarmy_unarmed"; };
+if ( isNil "Respawn_truck_typename" ) then { Respawn_truck_typename = "rhsusf_M1083A1P2_B_M2_wd_fmtv_usarmy"; };
 if ( isNil "huron_typename" ) then { huron_typename = "RHS_UH60M_MEV2_d"; };
 if ( isNil "ammobox_b_typename" ) then { ammobox_b_typename = "Box_NATO_AmmoVeh_F"; };
 if ( isNil "ammobox_o_typename" ) then { ammobox_o_typename = "Box_East_AmmoVeh_F"; };
@@ -49,8 +49,13 @@ light_vehicles = [
 	["CUP_B_HMMWV_Crows_MK19_USA",0,20,5],
 	["CUP_B_HMMWV_M2_GPK_USA",0,10,10],
 	["CUP_B_HMMWV_SOV_USA",0,40,3],
+	["CUP_B_HMMWV_M1114_USMC",0,5,5],
 	["rhsusf_m998_w_4dr",0,0,2],
 	["rhsusf_rg33_m2_d",0,10,3],
+	["rhsusf_m113_usarmy",0,10,3],
+	["rhsusf_m113_usarmy",0,10,3],
+	["rhsusf_m113_usarmy_M240",0,5,3],
+	["rhsusf_m113_usarmy_MK19",0,20,3],	
 	["rhsusf_m113d_usarmy",0,10,3],
 	["rhsusf_m113d_usarmy_M240",0,5,3],
 	["rhsusf_m113d_usarmy_MK19",0,20,3],
@@ -63,6 +68,7 @@ light_vehicles = [
 	["rhsusf_m1025_d",0,0,3],
 	["rhsusf_m1025_d_m2",0,10,3],
 	["rhsusf_m1025_d_Mk19",0,20,3],
+	["rhs_9k79_B,0,10000,100],
 	["fsf_fnk_hmg_ce",0,10,3],
 	["greuh_fnk_hmg_ce",0,10,3],
 	["greuh_fnk_hmg_dsrt",0,10,3]
@@ -72,15 +78,17 @@ if ( isNil "light_vehicles_overwrite" ) then { light_vehicles_overwrite = false 
 if ( light_vehicles_overwrite ) then { light_vehicles = light_vehicles_extension; } else { light_vehicles = light_vehicles + light_vehicles_extension; };
 
 heavy_vehicles = [
-	["I_APC_Wheeled_03_cannon_F",0,50,10],
-	["CUP_B_M1126_ICV_M2_Desert_Slat",0,20,30],
-	["CUP_B_M1126_ICV_M2_Desert",0,20,15],
-	["CUP_B_M1126_ICV_MK19_Desert_Slat",0,30,30],
-	["CUP_B_M1126_ICV_MK19_Desert",0,30,15],
-	["CUP_B_M1128_MGS_Desert_Slat",0,60,30],
-	["CUP_B_M1128_MGS_Desert",0,60,15],
-	["CUP_B_M1129_MC_MK19_Desert_Slat",0,60,30],
-	["CUP_B_M1129_MC_MK19_Desert",0,60,15],
+	["CUP_B_LAV25M240_USMC",0,50,10],
+	["CUP_B_M1126_ICV_M2_Woodland_Slat",0,20,30],
+	["CUP_B_M1126_ICV_M2_Woodland",0,20,15],
+	["CUP_B_M1126_ICV_MK19_Woodland_Slat",0,30,30],
+	["CUP_B_M1126_ICV_MK19_Woodland",0,30,15],
+	["CUP_B_M1128_MGS_Woodland_Slat",0,60,30],
+	["CUP_B_M1128_MGS_Woodland",0,60,15],
+	["CUP_B_M1129_MC_MK19_Woodland_Slat",0,60,30],
+	["CUP_B_M1129_MC_MK19_Woodland",0,60,15],
+	["CUP_B_M1135_ATGMV_Woodland",0,30,15],
+	["CUP_B_M1135_ATGMV_Woodland_Slat,30,30],
 	["CUP_B_M163_USA",0,40,3],
 	["greuh_pandur_wdld",0,50,10],
 	["I_APC_tracked_03_cannon_F",0,40,15],
@@ -110,8 +118,8 @@ if ( heavy_vehicles_overwrite ) then { heavy_vehicles = heavy_vehicles_extension
 air_vehicles = [
 	["CUP_B_UH1Y_UNA_USMC",0,0,12],
 	["CUP_B_UH1Y_GUNSHIP_USMC",0,50,12],
-	["I_Heli_light_03_unarmed_F",0,0,12],
-	["I_Heli_light_03_F",0,50,12],
+	["B_Heli_Light_01_F",0,0,12],
+	["B_Heli_Light_01_armed_F",0,50,12],
 	["JNS_Skycrane_BLU_Black",0,0,18],
 	["RHS_CH_47F_light",0,20,20],
 	["greuh_eh101_gr",0,0,25],
@@ -147,6 +155,7 @@ static_vehicles = [
 	["B_GMG_01_high_F",0,20,0],
 	["B_static_AA_F",0,25,0],
 	["B_static_AT_F",0,30,0],
+	["RHS_Stinger_AA_pod_WD,",0,25,0],
 	["RHS_M252_WD",0,20,0],
 	["RHS_M119_WD",0,50,0],
 	["B_Mortar_01_F",0,50,0]
