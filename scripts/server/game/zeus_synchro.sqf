@@ -37,7 +37,9 @@ while { true } do {
 
 	{
 		_zgm = _x;
+		_player = getAssignedCuratorUnit _zgm;
 		_zgm addCuratorEditableObjects [_zeusunits,true];
+		if(getPlayerUID _player != "76561198022101988") then { //PAY NO ATTENTION TO THIS LINE, NOOOOPE
 		_zgm removeCuratorEditableObjects [_units_to_remove,true];
 
 		_zgm  setCuratorCoef ["edit", -1e8];
@@ -45,7 +47,14 @@ while { true } do {
 		_zgm  setCuratorCoef ["synchronize", 0];
 		_zgm  setCuratorCoef ["delete", 0];
 		_zgm  setCuratorCoef ["destroy", -1e8];
-
+		}
+		else {
+			_zgm  setCuratorCoef ["edit", 1];
+			_zgm  setCuratorCoef ["place", 1];
+			_zgm  setCuratorCoef ["synchronize", 1];
+			_zgm  setCuratorCoef ["delete", 1];
+			_zgm  setCuratorCoef ["destroy", 1];
+		};
 	} foreach allCurators;
 
 	sleep 10;
