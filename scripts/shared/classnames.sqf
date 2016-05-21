@@ -53,6 +53,7 @@ light_vehicles = [
 	["rhsusf_m113d_usarmy",0,10,3],
 	["rhsusf_m113d_usarmy_M240",0,5,3],
 	["rhsusf_m113d_usarmy_MK19",0,20,3],
+	["rhsusf_M1117_D",0,20,5],
 	["rhsusf_m998_d_2dr_fulltop",0,0,3],
 	["rhsusf_m998_d_2dr_halftop",0,0,3],
 	["rhsusf_m998_d_2dr",0,0,3],
