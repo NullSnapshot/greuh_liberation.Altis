@@ -1,4 +1,13 @@
-GRLIB_save_key = "RUSSIAN_LIBERATION_ALTIS";	// change this value if you want different savegames on different map
+GRLIB_save_key = "Test Liberation";	// change this value if you want different savegames on different map
+
+GRLIB_side_friendly = WEST;
+GRLIB_side_enemy = EAST;
+GRLIB_side_resistance = RESISTANCE;
+GRLIB_side_civilian = CIVILIAN;
+GRLIB_respawn_marker = "respawn_west";
+GRLIB_color_friendly = "ColorBLUFOR";
+GRLIB_color_enemy = "ColorOPFOR";
+GRLIB_color_enemy_bright = "ColorRED";
 
 GRLIB_sector_size = 1000;
 GRLIB_capture_size = 175;
@@ -20,6 +29,7 @@ GRLIB_cleanup_delay = 1200;
 GRLIB_surrender_chance = 80;
 GRLIB_secondary_missions_costs = [ 10, 10, 10 ];
 GRLIB_halo_altitude = 4000;
+GRLIB_civ_killing_penalty = 20;
 
 if ( GRLIB_blufor_cap > 100 ) then { GRLIB_blufor_cap = 100 }; // Don't forget that the human commander manages those, not the server
 

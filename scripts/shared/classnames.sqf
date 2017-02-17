@@ -8,155 +8,93 @@
 
 if ( isNil "FOB_typename" ) then { FOB_typename = "Land_Cargo_HQ_V1_F"; };
 if ( isNil "FOB_box_typename" ) then { FOB_box_typename = "B_Slingload_01_Cargo_F"; };
-if ( isNil "FOB_truck_typename" ) then { FOB_truck_typename = "rhsusf_M1083A1P2_B_M2_d_MHQ_fmtv_usarmy"; };
+if ( isNil "FOB_truck_typename" ) then { FOB_truck_typename = "B_Truck_01_box_F"; };
 if ( isNil "Arsenal_typename" ) then { Arsenal_typename = "B_supplyCrate_F"; };
-if ( isNil "Respawn_truck_typename" ) then { Respawn_truck_typename = "rhsusf_M977A4_BKIT_M2_usarmy_d"; };
-if ( isNil "huron_typename" ) then { huron_typename = "RHS_UH60M_MEV2_d"; };
+if ( isNil "Respawn_truck_typename" ) then { Respawn_truck_typename = "B_Truck_01_medical_F"; };
+if ( isNil "huron_typename" ) then { huron_typename = "B_Heli_Transport_03_unarmed_F"; };
 if ( isNil "ammobox_b_typename" ) then { ammobox_b_typename = "Box_NATO_AmmoVeh_F"; };
 if ( isNil "ammobox_o_typename" ) then { ammobox_o_typename = "Box_East_AmmoVeh_F"; };
-if ( isNil "opfor_ammobox_transport" ) then { opfor_ammobox_transport = "CUP_O_Ural_Open_TKA"; };
+if ( isNil "opfor_ammobox_transport" ) then { opfor_ammobox_transport = "O_Truck_03_transport_F"; };
 if ( isNil "commander_classname" ) then { commander_classname = "B_officer_F"; };
-if ( isNil "crewman_classname" ) then { crewman_classname = "rhsusf_army_ocp_combatcrewman" };
-if ( isNil "pilot_classname" ) then { pilot_classname = "rhsusf_army_ocp_helipilot" };
+if ( isNil "crewman_classname" ) then { crewman_classname = "B_crew_F" };
+if ( isNil "pilot_classname" ) then { pilot_classname = "B_Helipilot_F" };
 
 infantry_units = [
-	["rhsusf_army_ucp_rifleman_1stcav",2,0,0],
-	["rhsusf_army_ucp_grenadier",3,0,0],
-	["rhsusf_army_ucp_autorifleman",3,0,0],
-	["rhsusf_army_ucp_medic",3,0,0],
-	["rhsusf_army_ucp_rifleman",3,0,0],
-	["rhsusf_army_ucp_engineer",3,0,0],
-	["rhsusf_army_ucp_riflemanat",4,0,0],
-	["rhsusf_army_ucp_marksman",5,0,0],
-	["rhsusf_army_ucp_machinegunner",5,0,0],
-	["rhsusf_usmc_recon_marpat_wd_rifleman_fast",4,0,0],
-	["rhsusf_navy_sarc_w_fast",4,0,0],
-	["rhsusf_usmc_recon_marpat_wd_teamleader_fast",5,0,0],
-	["rhsusf_usmc_recon_marpat_wd_marksman_fast",8,0,0],
-	["rhsusf_army_ucp_aa",5,10,0],
-	["rhsusf_army_ucp_javelin",5,10,0],
-	["rhsusf_army_ucp_sniper_m107",10,0,0],
-	["rhsusf_army_ocp_combatcrewman",1,0,0],
-	["rhsusf_army_ocp_helipilot",1,0,0]
+	["B_soldier_F",2,0,0],
+	["B_soldier_GL_F",3,0,0],
+	["B_soldier_AR_F",3,0,0],
+	["B_medic_F",3,0,0],
+	["B_soldier_M_F",3,0,0],
+	["B_engineer_F",3,0,0],
+	["B_soldier_LAT_F",4,0,0],
+	["B_Sharpshooter_F",5,0,0],
+	["B_HeavyGunner_F",5,0,0],
+	["B_recon_F",4,0,0],
+	["B_recon_medic_F",4,0,0],
+	["B_recon_M_F",5,0,0],
+	["B_Recon_Sharpshooter_F",8,0,0],
+	["B_soldier_AA_F",5,10,0],
+	["B_soldier_AT_F",5,10,0],
+	["B_sniper_F",10,0,0],
+	["B_soldier_PG_F",2,0,0],
+	["B_crew_F",1,0,0],
+	["B_helipilot_F",1,0,0]
 ];
 if ( isNil "infantry_units_extension" ) then { infantry_units_extension = [] };
 if ( isNil "infantry_units_overwrite" ) then { infantry_units_overwrite = false };
 if ( infantry_units_overwrite ) then { infantry_units = infantry_units_extension; } else { infantry_units = infantry_units + infantry_units_extension; };
 
 light_vehicles = [
-	["CUP_B_HMMWV_Crows_M2_USA",0,10,5],
-	["CUP_B_HMMWV_Crows_MK19_USA",0,20,5],
-	["CUP_B_HMMWV_M2_GPK_USA",0,10,10],
-	["CUP_B_HMMWV_SOV_USA",0,40,3],
-	["rhsusf_m998_w_4dr",0,0,2],
-	["rhsusf_rg33_m2_d",0,10,3],
-	["rhsusf_m113d_usarmy",0,10,3],
-	["rhsusf_m113d_usarmy_M240",0,5,3],
-	["rhsusf_m113d_usarmy_MK19",0,20,3],
-	["rhsusf_M1117_D",0,20,5],
-	["rhsusf_m998_d_2dr_fulltop",0,0,3],
-	["rhsusf_m998_d_2dr_halftop",0,0,3],
-	["rhsusf_m998_d_2dr",0,0,3],
-	["rhsusf_m998_d_4dr_fulltop",0,0,3],
-	["rhsusf_m998_d_4dr_halftop",0,0,3],
-	["rhsusf_m998_d_4dr",0,0,3],
-	["rhsusf_m1025_d",0,0,3],
-	["rhsusf_m1025_d_m2",0,10,3],
-	["rhsusf_m1025_d_Mk19",0,20,3],
-	["rhsusf_m998_w_2dr_fulltop",0,0,3],
-	["rhsusf_m998_w_2dr_halftop",0,0,3],
-	["rhsusf_m998_w_2dr",0,0,3],
-	["rhsusf_m998_w_4dr_fulltop",0,0,3],
-	["rhsusf_m998_w_4dr_halftop",0,0,3],
-	["rhsusf_m998_w_4dr",0,0,3],
-	["rhsusf_m1025_w",0,0,3],
-	["rhsusf_m1025_w_m2",0,10,3],
-	["rhsusf_m1025_w_Mk19",0,20,3],
-	["fsf_fnk_hmg_ce",0,10,3],
-	["greuh_fnk_hmg_ce",0,10,3],
-	["greuh_fnk_hmg_dsrt",0,10,3]
+	["B_Quadbike_01_F",0,0,1],
+	["B_MRAP_01_F",0,0,2],
+	["B_MRAP_01_hmg_F",0,10,2],
+	["B_MRAP_01_gmg_F",0,20,2],
+	["B_Truck_01_transport_F",0,0,5],
+	["B_Truck_01_covered_F",0,0,5],
+	["B_UGV_01_F",0,0,5],
+	["B_UGV_01_rcws_F",0,50,5],
+	["B_Boat_Transport_01_F",0,0,2],
+	["B_Boat_Armed_01_minigun_F",0,30,10]
 ];
 if ( isNil "light_vehicles_extension" ) then { light_vehicles_extension = [] };
 if ( isNil "light_vehicles_overwrite" ) then { light_vehicles_overwrite = false };
 if ( light_vehicles_overwrite ) then { light_vehicles = light_vehicles_extension; } else { light_vehicles = light_vehicles + light_vehicles_extension; };
 
 heavy_vehicles = [
-	["I_APC_Wheeled_03_cannon_F",0,50,10],
-	["CUP_B_M1126_ICV_M2_Desert_Slat",0,20,30],
-	["CUP_B_M1126_ICV_M2_Desert",0,20,15],
-	["CUP_B_M1126_ICV_MK19_Desert_Slat",0,30,30],
-	["CUP_B_M1126_ICV_MK19_Desert",0,30,15],
-	["CUP_B_M1128_MGS_Desert_Slat",0,60,30],
-	["CUP_B_M1128_MGS_Desert",0,60,15],
-	["CUP_B_M1129_MC_MK19_Desert_Slat",0,60,30],
-	["CUP_B_M1129_MC_MK19_Desert",0,60,15],
-	["CUP_B_M163_USA",0,40,3],
-	["greuh_pandur_wdld",0,50,10],
-	["I_APC_tracked_03_cannon_F",0,40,15],
-	["greuh_fv510_wdld",0,40,15],
-	["greuh_fv510_dsrt",0,40,15],
-	["RHS_M2A2",0,25,15],
-	["RHS_M2A2_BUSKI",0,30,15],
-	["RHS_M2A3",0,35,15],
-	["RHS_M2A3_BUSKI",0,40,15],
-	["RHS_M2A3_BUSKIII",0,50,15],
-	["RHS_M6",0,55,15],
-	["Steve_MBT_Kuma",0,100,25],
-	["CUP_B_M270_DPICM_USA",0,400,60],
-	["CUP_B_M270_HE_USA",0,350,60],
-	["rhsusf_m109d_usarmy",0,150,25],
-	["rhsusf_m1a1aimd_usarmy",0,80,70],
-	["rhsusf_m1a1aim_tuski_d",0,90,70],
-	["rhsusf_m1a2sep1d_usarmy",0,100,70],
-	["rhsusf_m1a2sep1tuskid_usarmy",0,110,70],
-	["rhsusf_m1a2sep1tuskiid_usarmy",0,110,80],
-	["Burnes_FV4034_01",0,250,40]
+	["B_APC_Wheeled_01_cannon_F",0,30,8],
+	["B_APC_Tracked_01_rcws_F",0,30,15],
+	["B_APC_Tracked_01_AA_F",0,40,15],
+	["B_MBT_01_cannon_F",0,75,20],
+	["B_MBT_01_TUSK_F",0,100,25],
+	["B_MBT_01_arty_F",0,750,30],
+	["B_MBT_01_mlrs_F",0,2500,100]
 ];
 if ( isNil "heavy_vehicles_extension" ) then { heavy_vehicles_extension = [] };
 if ( isNil "heavy_vehicles_overwrite" ) then { heavy_vehicles_overwrite = false };
 if ( heavy_vehicles_overwrite ) then { heavy_vehicles = heavy_vehicles_extension; } else { heavy_vehicles = heavy_vehicles + heavy_vehicles_extension; };
 
 air_vehicles = [
-	["RHS_UH1Y_d",0,10,12],
-	["RHS_UH1Y_d_GS",0,50,12],
-	["I_Heli_light_03_unarmed_F",0,0,12],
-	["I_Heli_light_03_F",0,50,12],
-	["JNS_Skycrane_BLU_Black",0,0,18],
-	["RHS_CH_47F_light",0,20,20],
-	["greuh_eh101_gr",0,0,25],
-	["RHS_UH60M_d",0,10,25],
-	["CUP_B_USMC_MQ9",0,20,30],
-	["CUP_B_MV22_USMC_RAMPGUN",0,20,25],
-	["RHS_AH1Z_wd_GS",0,175,30],
-	["RHS_AH1Z",0,180,30],
-	["RHS_AH64DGrey",0,200,30],
-	["RHS_AH64D",0,200,30],
-	["RHS_AH64D_GS",0,200,30],
-	["RHS_AH64D_CS",0,200,30],
-	["H_RAH66",0,200,30],
-	["RHS_AH64D_wd",0,400,50],
-	["FIR_F16C",0,100,30],
-	["FIR_F15E",0,200,50],
-	["FIR_F14D",0,150,40],
-	["rhsusf_f22",0,500,75],
-	["RHS_MELB_MH6M",0,0,10],
-	["RHS_MELB_H6M",0,0,10],
-	["RHS_MELB_AH6M_H",0,30,10],
-	["RHS_MELB_AH6M_L",0,10,10],
-	["RHS_MELB_AH6M_M",0,20,10],
-	["RHS_C130J",0,200,75],
-	["RHS_A10_AT",0,275,75],
-	["RHS_A10",0,250,75]
+	["B_Heli_Light_01_F",0,0,10],
+	["B_Heli_Light_01_armed_F",0,30,10],
+	["B_Heli_Transport_01_F",0,20,12],
+	["B_Heli_Transport_03_F",0,20,15],
+	["B_Heli_Attack_01_F",0,150,30],
+	["B_Plane_CAS_01_F",0,500,50],
+	["B_UAV_01_F",0,0,5],
+	["B_UAV_02_F",0,250,20],
+	["B_UAV_02_CAS_F",0,250,20]
 ];
 if ( isNil "air_vehicles_extension" ) then { air_vehicles_extension = [] };
 if ( isNil "air_vehicles_overwrite" ) then { air_vehicles_overwrite = false };
 if ( air_vehicles_overwrite ) then { air_vehicles = air_vehicles_extension; } else { air_vehicles = air_vehicles + air_vehicles_extension; };
 
 static_vehicles = [
-	["RHS_Stinger_AA_pod_D",0,25,0],
-	["RHS_TOW_TriPod_WD",0,30,0],
-	["RHS_M252_WD",0,20,0],
-	["RHS_M119_WD",0,50,0],
+	["B_HMG_01_F",0,10,0],
+	["B_HMG_01_high_F",0,10,0],
+	["B_GMG_01_F",0,20,0],
+	["B_GMG_01_high_F",0,20,0],
+	["B_static_AA_F",0,25,0],
+	["B_static_AT_F",0,30,0],
 	["B_Mortar_01_F",0,50,0]
 ];
 if ( isNil "static_vehicles_extension" ) then { static_vehicles_extension = [] };
@@ -176,7 +114,6 @@ buildings = [
 	["Land_BagBunker_Small_F",0,0,0],
 	["Land_BagBunker_Tower_F",0,0,0],
 	["Land_PortableLight_single_F",0,0,0],
-	["Land_LampHalogen_F",0,0,0],
 	["CamoNet_BLUFOR_open_F",0,0,0],
 	["CamoNet_BLUFOR_big_F",0,0,0],
 	["Land_Cargo_House_V1_F",0,0,0],
@@ -184,7 +121,6 @@ buildings = [
 	["Flag_NATO_F",0,0,0],
 	["Land_HelipadSquare_F",0,0,0],
 	["Land_Razorwire_F",0,0,0],
-	["Fort_RazorWire",0,0,0],
 	["Land_BagFence_Round_F",0,0,0],
 	["Land_ToolTrolley_02_F",0,0,0],
 	["Land_WeldingTrolley_01_F",0,0,0],
@@ -203,39 +139,7 @@ buildings = [
 	["Land_DieselGroundPowerUnit_01_F",0,0,0],
 	["Land_Pallet_MilBoxes_F",0,0,0],
 	["Land_PaperBox_open_full_F",0,0,0],
-	["Land_ClutterCutter_large_F",0,0,0],
-	["Flag_US_F",0,0,0],
-	["Flag_UNO_F",0,0,0],
-	["TargetBootcampHuman_F",0,0,0],
-	["PortableHelipadLight_01_red_F",0,0,0],
-	["Land_fort_artillery_nest_EP1",0,0,0],
-	["Land_BagFenceLong",0,0,0],
-	["Land_Fort_Watchtower_EP1",0,0,0],
-	["76n6ClamShell_EP1",0,0,0],
-	["SignM_FOB_Revolve_EP1",0,0,0],
-	["SignM_FARP_Winchester_EP1",0,0,0],
-	["SignM_UN_Base_EP1",0,0,0],
-	["Sign_Checkpoint_US_EP1",0,0,0],
-	["Land_BarGate_F",0,0,0],
-	["Land_Barrack2_EP1",0,0,0],
-	["ACE_Wheel",0,0,0],
-	["ACE_Track",0,0,0],
-	["Land_ScrapHeap_1_F",0,0,0],
-	["Land_Misc_Cargo1Eo_EP1",0,0,0],
-	["Land_Misc_Cargo1E_EP1",0,0,0],
-	["Land_Barrel_sand",0,0,0],
-	["Barrels",0,0,0],
-	["PowerGenerator_EP1",0,0,0],
-	["Land_Toilet",0,0,0],
-	["Fuel_can",0,0,0],
-	["Land_GasTank_01_khaki_F",0,0,0],
-	["Land_JetEngineStarter_01_",0,0,0],
-	["Windsock_01_F",0,0,0],
-	["Loudspeakers_EP",0,0,0],
-	["AmmoCrates_NoInteractive_Large",0,0,0],
-	["AmmoCrates_NoInteractive_Medium",0,0,0],
-	["RoadCone",0,0,0],
-	["Land_CamoNetVar_NATO_EP1",0,0,0]
+	["Land_ClutterCutter_large_F",0,0,0]
 ];
 if ( isNil "buildings_extension" ) then { buildings_extension = [] };
 if ( isNil "buildings_overwrite" ) then { buildings_overwrite = false };
@@ -248,9 +152,9 @@ support_vehicles = [
 	[FOB_truck_typename,30,50,5],
 	["B_APC_Tracked_01_CRV_F",0,30,10],
 	["C_Offroad_01_repair_F",5,0,2],
-	["rhsusf_M977A4_REPAIR_BKIT_usarmy_d",10,0,5],
-	["rhsusf_M978A4_BKIT_usarmy_d",10,0,5],
-	["rhsusf_M977A4_AMMO_BKIT_M2_usarmy_d",10,0,5],
+	["B_Truck_01_Repair_F",10,0,5],
+	["B_Truck_01_fuel_F",10,0,5],
+	["B_Truck_01_ammo_F",10,0,5],
 	["B_Slingload_01_Repair_F",5,0,0],
 	["B_Slingload_01_Fuel_F",5,0,0],
 	["B_Slingload_01_Ammo_F",5,0,0],
@@ -275,7 +179,7 @@ if ( isNil "blufor_squad_para" ) then { blufor_squad_para = [] };
 if ( count blufor_squad_para == 0 ) then { blufor_squad_para = [ "B_soldier_PG_F","B_soldier_PG_F","B_soldier_PG_F","B_soldier_PG_F","B_soldier_PG_F","B_soldier_PG_F","B_soldier_PG_F","B_soldier_PG_F","B_soldier_PG_F","B_soldier_PG_F" ]; };
 if ( isNil "blufor_squad_inf_light" ) then { blufor_squad_inf_light = [] };
 if ( count blufor_squad_inf_light == 0 ) then { blufor_squad_inf_light = [ "B_Soldier_SL_F","B_Soldier_TL_F","B_Soldier_GL_F","B_soldier_AR_F","B_Soldier_GL_F","B_medic_F","B_Soldier_LAT_F","B_Soldier_F","B_Soldier_F"]; };
-if ( isNil "uavs" ) then { uavs = [] }; uavs = [] + uavs + [ "B_UAV_01_F","B_UAV_02_F","B_UAV_02_CAS_F","B_UGV_01_F","CUP_B_USMC_MQ9","B_UGV_01_rcws_F" ];
+if ( isNil "uavs" ) then { uavs = [] }; uavs = [] + uavs + [ "B_UAV_01_F","B_UAV_02_F","B_UAV_02_CAS_F","B_UGV_01_F","B_UGV_01_rcws_F" ];
 if ( isNil "elite_vehicles_extension" ) then { elite_vehicles_extension = [] }; elite_vehicles = [] + elite_vehicles_extension + ["B_UGV_01_rcws_F","B_MBT_01_TUSK_F","B_MBT_01_arty_F","B_MBT_01_mlrs_F","B_Heli_Attack_01_F","B_Plane_CAS_01_F","B_UAV_02_F","B_UAV_02_CAS_F"];
 if ( isNil "ai_resupply_sources_extension" ) then { ai_resupply_sources_extension = [] };
 ai_resupply_sources = [] + ai_resupply_sources_extension + [ Respawn_truck_typename, huron_typename, Arsenal_typename, "B_Slingload_01_Ammo_F", "B_APC_Tracked_01_CRV_F", "B_Truck_01_ammo_F", "JNS_Skycrane_Pod_Ammo_BLU_Black" ];
@@ -294,141 +198,140 @@ squads = [
 	[blufor_squad_para,20,0,0]
 ];
 
-if ( isNil "opfor_sentry") then { opfor_sentry = "rhs_msv_rifleman"; };
-if ( isNil "opfor_rifleman") then { opfor_rifleman = "rhs_msv_rifleman"; };
-if ( isNil "opfor_grenadier") then { opfor_grenadier = "rhs_msv_grenadier"; };
-if ( isNil "opfor_squad_leader") then { opfor_squad_leader = "rhs_msv_sergeant"; };
-if ( isNil "opfor_team_leader") then { opfor_team_leader = "rhs_msv_junior_sergeant"; };
-if ( isNil "opfor_marksman") then { opfor_marksman = "rhs_msv_marksman"; };
-if ( isNil "opfor_machinegunner") then { opfor_machinegunner = "rhs_msv_machinegunner"; };
-if ( isNil "opfor_heavygunner") then { opfor_heavygunner = "rhs_msv_arifleman"; };
-if ( isNil "opfor_medic") then { opfor_medic = "rhs_msv_medic"; };
-if ( isNil "opfor_rpg") then { opfor_rpg = "rhs_msv_LAT"; };
-if ( isNil "opfor_at") then { opfor_at = "rhs_msv_at"; };
-if ( isNil "opfor_aa") then { opfor_aa = "rhs_msv_aa"; };
-if ( isNil "opfor_officer") then { opfor_officer = "rhs_msv_officer"; };
-if ( isNil "opfor_sharpshooter") then { opfor_sharpshooter = "rhs_mvd_izlom_marksman"; };
-if ( isNil "opfor_sniper") then { opfor_sniper = "rhs_mvd_izlom_rifleman_asval"; };
-if ( isNil "opfor_engineer") then { opfor_engineer = "rhs_mvd_izlom_sergeant"; };
-if ( isNil "opfor_paratrooper") then { opfor_paratrooper = "rhs_mvd_izlom_sergeant"; };
-if ( isNil "opfor_mrap") then { opfor_mrap = "rhs_tigr_3camo_msv"; };
-if ( isNil "opfor_mrap_armed") then { opfor_mrap_armed = "rhs_tigr_sts_3camo_msv"; };
-if ( isNil "opfor_transport_helo") then { opfor_transport_helo = "RHS_Mi8mt_vdv"; };
-if ( isNil "opfor_transport_truck") then { opfor_transport_truck = "RHS_Ural_MSV_01"; };
-if ( isNil "opfor_fuel_truck") then { opfor_fuel_truck = "RHS_Ural_MSV_01"; };
-if ( isNil "opfor_ammo_truck") then { opfor_ammo_truck = "rhs_gaz66_ammo_msv"; };
+if ( isNil "opfor_sentry") then { opfor_sentry = "O_Soldier_lite_F"; };
+if ( isNil "opfor_rifleman") then { opfor_rifleman = "O_Soldier_F"; };
+if ( isNil "opfor_grenadier") then { opfor_grenadier = "O_Soldier_GL_F"; };
+if ( isNil "opfor_squad_leader") then { opfor_squad_leader = "O_Soldier_SL_F"; };
+if ( isNil "opfor_team_leader") then { opfor_team_leader = "O_Soldier_TL_F"; };
+if ( isNil "opfor_marksman") then { opfor_marksman = "O_soldier_M_F"; };
+if ( isNil "opfor_machinegunner") then { opfor_machinegunner = "O_Soldier_AR_F"; };
+if ( isNil "opfor_heavygunner") then { opfor_heavygunner = "O_HeavyGunner_F"; };
+if ( isNil "opfor_medic") then { opfor_medic = "O_medic_F"; };
+if ( isNil "opfor_rpg") then { opfor_rpg = "O_Soldier_LAT_F"; };
+if ( isNil "opfor_at") then { opfor_at = "O_Soldier_AT_F"; };
+if ( isNil "opfor_aa") then { opfor_aa = "O_Soldier_AA_F"; };
+if ( isNil "opfor_officer") then { opfor_officer = "O_officer_F"; };
+if ( isNil "opfor_sharpshooter") then { opfor_sharpshooter = "O_Sharpshooter_F"; };
+if ( isNil "opfor_sniper") then { opfor_sniper = "O_sniper_F"; };
+if ( isNil "opfor_engineer") then { opfor_engineer = "O_engineer_F"; };
+if ( isNil "opfor_paratrooper") then { opfor_paratrooper = "O_soldier_PG_F"; };
+if ( isNil "opfor_mrap") then { opfor_mrap = "O_MRAP_02_F"; };
+if ( isNil "opfor_mrap_armed") then { opfor_mrap_armed = "O_MRAP_02_gmg_F"; };
+if ( isNil "opfor_transport_helo") then { opfor_transport_helo = "O_Heli_Transport_04_bench_F"; };
+if ( isNil "opfor_transport_truck") then { opfor_transport_truck = "O_Truck_03_covered_F"; };
+if ( isNil "opfor_fuel_truck") then { opfor_fuel_truck = "O_Truck_03_fuel_F"; };
+if ( isNil "opfor_ammo_truck") then { opfor_ammo_truck = "O_Truck_03_ammo_F"; };
 if ( isNil "opfor_fuel_container") then { opfor_fuel_container = "Land_Pod_Heli_Transport_04_fuel_F"; };
-if ( isNil "opfor_ammo_container") then { opfor_ammo_container = "rhs_gear_crate"; };
-if ( isNil "opfor_flag") then { opfor_flag = "rhs_Flag_Russia_F"; };
+if ( isNil "opfor_ammo_container") then { opfor_ammo_container = "Land_Pod_Heli_Transport_04_ammo_F"; };
+if ( isNil "opfor_flag") then { opfor_flag = "Flag_CSAT_F"; };
 
 militia_squad = [
-	"rhs_vdv_recon_rifleman",
-	"rhs_vdv_recon_rifleman_ak103",
-	"rhs_vdv_recon_sergeant",
-	"rhs_vdv_recon_rifleman_scout",
-	"rhs_vdv_recon_grenadier_scout",
-	"rhs_vdv_recon_arifleman_scout",
-	"rhs_vdv_recon_marksman",
-	"rhs_vdv_recon_rifleman_asval"
+	"O_G_Soldier_SL_F",
+	"O_G_Soldier_A_F",
+	"O_G_Soldier_AR_F",
+	"O_G_medic_F",
+	"O_G_engineer_F",
+	"O_G_Soldier_exp_F",
+	"O_G_Soldier_GL_F",
+	"O_G_Soldier_M_F",
+	"O_G_Soldier_F",
+	"O_G_Soldier_LAT_F",
+	"O_G_Soldier_lite_F",
+	"O_G_Sharpshooter_F",
+	"O_G_Soldier_TL_F"
 ];
 if ( isNil "militia_squad_extension" ) then { militia_squad_extension = [] };
 if ( isNil "militia_squad_overwrite" ) then { militia_squad_overwrite = false };
 if ( militia_squad_overwrite ) then { militia_squad = militia_squad_extension; } else { militia_squad = militia_squad + militia_squad_extension; };
 
 militia_vehicles = [
-	"rhs_tigr_sts_3camo_vv",
-	"rhs_btr80a_vv",
-	"rhs_btr80a_vv",
-	"rhs_bmp2d_vv",
-	"rhs_tigr_m_3camo_vv"
+	"O_G_Offroad_01_armed_F"
 ];
 if ( isNil "militia_vehicles_extension" ) then { militia_vehicles_extension = [] };
 if ( isNil "militia_vehicles_overwrite" ) then { militia_vehicles_overwrite = false };
 if ( militia_vehicles_overwrite ) then { militia_vehicles = militia_vehicles_extension; } else { militia_vehicles = militia_vehicles + militia_vehicles_extension; };
 
 opfor_vehicles = [
-	"rhs_bmp2_msv",
-	"rhs_btr80a_msv",
-	"rhs_t80uk",
-	"rhs_t80um",
-	"rhs_zsu234_aa",
-	"rhs_t90a_tv",
-	"rhs_btr70_msv",
-	"rhs_tigr_sts_3camo_msv",
-	"rhs_t72bd_tv",
-	"rhs_t80bvk",
-	"rhs_t80ue1",
-	"rhs_t72bc_tv",
-	"rhs_t90_tv",
-	"rhs_t72ba_tv",
-	"rhs_t72bb_tv"
+	"O_APC_Tracked_02_cannon_F",
+	"O_APC_Wheeled_02_rcws_F",
+	"O_APC_Tracked_02_cannon_F",
+	"O_APC_Wheeled_02_rcws_F",
+	"O_MBT_02_cannon_F",
+	"O_MBT_02_cannon_F",
+	"O_APC_Tracked_02_AA_F",
+	"O_MRAP_02_gmg_F",
+	"O_MRAP_02_hmg_F",
+	"O_MRAP_02_hmg_F"
 ];
 if ( isNil "opfor_vehicles_extension" ) then { opfor_vehicles_extension = [] };
 if ( isNil "opfor_vehicles_overwrite" ) then { opfor_vehicles_overwrite = false };
 if ( opfor_vehicles_overwrite ) then { opfor_vehicles = opfor_vehicles_extension; } else { opfor_vehicles = opfor_vehicles + opfor_vehicles_extension; };
 
 opfor_vehicles_low_intensity = [
-	"rhs_tigr_sts_3camo_vv",
-	"rhs_btr80a_vv",
-	"rhs_btr80a_vv",
-	"rhs_bmp2d_vv",
-	"rhs_tigr_m_3camo_vv"
+	"O_APC_Tracked_02_cannon_F",
+	"O_APC_Wheeled_02_rcws_F",
+	"O_MRAP_02_hmg_F",
+	"O_MRAP_02_hmg_F",
+	"O_MRAP_02_gmg_F"
 ];
 if ( isNil "opfor_vehicles_low_intensity_extension" ) then { opfor_vehicles_low_intensity_extension = [] };
 if ( isNil "opfor_vehicles_low_intensity_overwrite" ) then { opfor_vehicles_low_intensity_overwrite = false };
 if ( opfor_vehicles_low_intensity_overwrite ) then { opfor_vehicles_low_intensity = opfor_vehicles_low_intensity_extension; } else { opfor_vehicles_low_intensity = opfor_vehicles_low_intensity + opfor_vehicles_low_intensity_extension; };
 
 opfor_battlegroup_vehicles = [
-	"rhs_tigr_sts_3camo_msv",
-	"rhs_t72bd_tv",
-	"rhs_t80ue1",
-	"rhs_t80bvk",
-	"rhs_t72bc_tv",
-	"rhs_t90_tv",
-	"rhs_t90a_tv",
-	"RHS_Ural_MSV_01",
-	"rhs_btr80a_msv",
-	"CUP_O_T72_TKA"
+	"O_MRAP_02_hmg_F",
+	"O_MRAP_02_gmg_F",
+	"O_APC_Tracked_02_cannon_F",
+	"O_APC_Wheeled_02_rcws_F",
+	"O_Truck_03_covered_F",
+	"O_MBT_02_cannon_F",
+	"O_MBT_02_cannon_F",
+	"O_APC_Tracked_02_AA_F",
+	"O_Heli_Attack_02_F",
+	"O_Heli_Light_02_F",
+	"O_Heli_Transport_04_bench_F",
+	"O_Truck_03_transport_F"
 ];
 if ( isNil "opfor_battlegroup_vehicles_extension" ) then { opfor_battlegroup_vehicles_extension = [] };
 if ( isNil "opfor_battlegroup_vehicles_overwrite" ) then { opfor_battlegroup_vehicles_overwrite = false };
 if ( opfor_battlegroup_vehicles_overwrite ) then { opfor_battlegroup_vehicles = opfor_battlegroup_vehicles_extension; } else { opfor_battlegroup_vehicles = opfor_battlegroup_vehicles + opfor_battlegroup_vehicles_extension; };
 
 opfor_battlegroup_vehicles_low_intensity = [
-	"rhs_tigr_sts_3camo_msv",
-	"rhs_gaz66_flat_msv",
-	"rhs_t72bd_tv",
-	"rhs_btr70_msv",
-	"rhs_tigr_m_3camo_vv",
-	"rhs_btr80a_vv",
-	"rhs_bmp2d_vv"
+	"O_APC_Tracked_02_cannon_F",
+	"O_APC_Wheeled_02_rcws_F",
+	"O_MRAP_02_hmg_F",
+	"O_MRAP_02_hmg_F",
+	"O_MRAP_02_gmg_F",
+	"O_Truck_03_covered_F",
+	"O_Heli_Transport_04_bench_F",
+	"O_Truck_03_transport_F"
 ];
 if ( isNil "opfor_battlegroup_vehicles_low_intensity_extension" ) then { opfor_battlegroup_vehicles_low_intensity_extension = [] };
 if ( isNil "opfor_battlegroup_vehicles_low_intensity_overwrite" ) then { opfor_battlegroup_vehicles_low_intensity_overwrite = false };
 if ( opfor_battlegroup_vehicles_low_intensity_overwrite ) then { opfor_battlegroup_vehicles_low_intensity = opfor_battlegroup_vehicles_low_intensity_extension; } else { opfor_battlegroup_vehicles_low_intensity = opfor_battlegroup_vehicles_low_intensity + opfor_battlegroup_vehicles_low_intensity_extension; };
 
 opfor_troup_transports = [
-	"RHS_Ural_MSV_01",
-	"rhs_gaz66_flat_msv",
-	"rhs_btr80a_msv"
+	"O_APC_Wheeled_02_rcws_F",
+	"O_Truck_03_covered_F",
+	"O_Heli_Transport_04_bench_F",
+	"O_Truck_03_transport_F",
+	"O_Heli_Light_02_F"
 ];
 if ( isNil "opfor_troup_transports_extension" ) then { opfor_troup_transports_extension = [] };
 if ( isNil "opfor_troup_transports_overwrite" ) then { opfor_troup_transports_overwrite = false };
-if ( opfor_troup_transports_overwrite ) then { buildinopfor_troup_transportsgs = opfor_troup_transports_extension; } else { opfor_troup_transports = opfor_troup_transports + opfor_troup_transports_extension; };
+if ( opfor_troup_transports_overwrite ) then { opfor_troup_transports = opfor_troup_transports_extension; } else { opfor_troup_transports = opfor_troup_transports + opfor_troup_transports_extension; };
 
 opfor_choppers = [
-	"RHS_Mi24P_CAS_vdv",
-	"RHS_Ka52_vvs",
-	"RHS_Mi8mt_vdv"
+	"O_Heli_Attack_02_F",
+	"O_Heli_Light_02_F",
+	"O_Heli_Transport_04_bench_F"
 ];
 if ( isNil "opfor_choppers_extension" ) then { opfor_choppers_extension = [] };
 if ( isNil "opfor_choppers_overwrite" ) then { opfor_choppers_overwrite = false };
 if ( opfor_choppers_overwrite ) then { opfor_choppers = opfor_choppers_extension; } else { opfor_choppers = opfor_choppers + opfor_choppers_extension; };
 
 opfor_air = [
-	"RHS_Su25SM_KH29_vvs",
-	"RHS_T50_vvs_054",
-	"RHS_T50_vvs_blueonblue"
+	"O_Plane_CAS_02_F"
 ];
 if ( isNil "opfor_air_extension" ) then { opfor_air_extension = [] };
 if ( isNil "opfor_air_overwrite" ) then { opfor_air_overwrite = false };
@@ -569,7 +472,7 @@ ammobox_transports_typenames = [];
 { ammobox_transports_typenames pushback (_x select 0) } foreach box_transport_config;
 ammobox_transports_typenames = [ ammobox_transports_typenames , { [ _x ] call F_checkClass } ]  call BIS_fnc_conditionalSelect;
 elite_vehicles = [ elite_vehicles , { [ _x ] call F_checkClass } ]  call BIS_fnc_conditionalSelect;
-original_resistance = [ "O_G_Soldier_SL_F","O_G_Soldier_A_F","O_G_Soldier_AR_F","O_G_medic_F","O_G_engineer_F","O_G_Soldier_exp_F","O_G_Soldier_GL_F","O_G_Soldier_M_F","O_G_Soldier_F","O_G_Soldier_LAT_F","O_G_Soldier_lite_F","O_g_soldier_unarmed_f","O_G_Sharpshooter_F","O_g_survivor_F","O_G_Soldier_TL_F"];
+original_resistance = [ "O_G_Soldier_SL_F","O_G_Soldier_A_F","O_G_Soldier_AR_F","O_G_medic_F","O_G_engineer_F","O_G_Soldier_exp_F","O_G_Soldier_GL_F","O_G_Soldier_M_F","O_G_Soldier_F","O_G_Soldier_LAT_F","O_G_Soldier_lite_F","O_G_Sharpshooter_F","O_G_Soldier_TL_F"];
 opfor_infantry = [opfor_sentry,opfor_rifleman,opfor_grenadier,opfor_squad_leader,opfor_team_leader,opfor_marksman,opfor_machinegunner,opfor_heavygunner,opfor_medic,opfor_rpg,opfor_at,opfor_aa,opfor_officer,opfor_sharpshooter,opfor_sniper,opfor_engineer];
 GRLIB_intel_table = "Land_CampingTable_small_F";
 GRLIB_intel_chair = "Land_CampingChair_V2_F";
