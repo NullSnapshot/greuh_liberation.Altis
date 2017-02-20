@@ -222,34 +222,34 @@ blufor_squad_para = [
 // *** BADDIES ***
 
 // All OPFOR infantry. Defining a value here will replace the default value from the original mission.
-opfor_sentry = rhsgref_nat_rifleman;
-opfor_rifleman = rhsgref_nat_rifleman;
-opfor_grenadier = rhsgref_nat_grenadier;
-opfor_squad_leader = rhsgref_nat_commander;
-opfor_team_leader = rhsgref_nat_commander;
-opfor_marksman = rhsgref_nat_scout;
-opfor_machinegunner = rhsgref_nat_machinegunner;
-opfor_heavygunner = CUP_O_TK_Soldier_MG;
-opfor_medic = rhsgref_ins_g_medic;
-opfor_rpg = rhsgref_nat_grenadier_rpg;
-opfor_at = rhsgref_nat_grenadier_rpg;
-opfor_aa = rhsgref_nat_specialist_aa;
-opfor_officer = rhsgref_nat_warlord;
-opfor_sharpshooter = rhsgref_nat_militiaman_kar98k;
-opfor_sniper = rhsgref_ins_g_sniper;
-opfor_engineer = rhsgref_ins_g_engineer;
+opfor_sentry = "rhsgref_nat_rifleman";
+opfor_rifleman = "rhsgref_nat_rifleman";
+opfor_grenadier = "rhsgref_nat_grenadier";
+opfor_squad_leader = "rhsgref_nat_commander";
+opfor_team_leader = "rhsgref_nat_commander";
+opfor_marksman = "rhsgref_nat_scout";
+opfor_machinegunner = "rhsgref_nat_machinegunner";
+opfor_heavygunner = "rhsgref_nat_pmil_machinegunner";
+opfor_medic = "rhsgref_ins_g_medic";
+opfor_rpg = "rhsgref_nat_grenadier_rpg";
+opfor_at = "rhsgref_nat_grenadier_rpg";
+opfor_aa = "rhsgref_nat_specialist_aa";
+opfor_officer = "rhsgref_nat_warlord";
+opfor_sharpshooter = "rhsgref_nat_militiaman_kar98k";
+opfor_sniper = "rhsgref_ins_g_sniper";
+opfor_engineer = "rhsgref_ins_g_engineer";
 opfor_paratrooper = nil;
 
 // OPFOR Vehicles to be used in secondary objectives
-opfor_mrap = rhsgref_BRDM2UM_ins_g;
-opfor_mrap_armed = rhsgref_BRDM2_ins_g;
-opfor_transport_helo = rhsgref_ins_g_Mi8amt;
-opfor_transport_truck = rhsgref_nat_ural_open;
-opfor_fuel_truck = rhsgref_nat_van_fuel;
-opfor_ammo_truck = rhsgref_ins_g_gaz66_ammo;
+opfor_mrap = "rhsgref_BRDM2UM_ins_g";
+opfor_mrap_armed = "rhsgref_BRDM2_ins_g";
+opfor_transport_helo = "rhsgref_ins_g_Mi8amt";
+opfor_transport_truck = "rhsgref_nat_ural_open";
+opfor_fuel_truck = "rhsgref_nat_van_fuel";
+opfor_ammo_truck = "rhsgref_ins_g_gaz66_ammo";
 opfor_fuel_container = nil;
 opfor_ammo_container = nil;
-opfor_flag = Flag_HorizonIslands_F;
+opfor_flag = "Flag_HorizonIslands_F";
 
 // Militia infantry. Soldier classnames the game will pick from randomly
 militia_squad_overwrite = false;
