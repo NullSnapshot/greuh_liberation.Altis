@@ -9,7 +9,7 @@
 // Each of these should be unique, the same classnames for different purposes may cause various unpredictable issues with player actions. Or not. Just don't try.
 FOB_typename = "Land_Cargo_HQ_V4_F";						// Default "Land_Cargo_HQ_V1_F";
 FOB_box_typename = nil;					// Default "B_Slingload_01_Cargo_F";
-FOB_truck_typename = "rhsusf_M988A4_REPAIR_BKIT_usarmy_wd";				// Default "B_Truck_01_box_F";
+FOB_truck_typename = "rhsusf_M977A4_REPAIR_BKIT_usarmy_wd";				// Default "B_Truck_01_box_F";
 Arsenal_typename = nil;					// Default "B_supplyCrate_F";
 Respawn_truck_typename = "rhsusf_M1083A1P2_B_wd_fmtv_usarmy";			// Default "B_Truck_01_medical_F";
 huron_typename = "rhsusf_CH53E_USMC";					// Default "B_Heli_Transport_03_unarmed_F";
